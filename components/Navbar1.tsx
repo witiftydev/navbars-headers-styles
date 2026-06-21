@@ -16,46 +16,70 @@ export default function Navbar1() {
   return (
     <>
       {/* Floating Navbar */}
-      <nav className="fixed top-6 left-1/2 z-50 w-[95%] max-w-6xl -translate-x-1/2 rounded-full ">
-        <div className="flex items-center justify-between rounded-full">
+      <nav className="fixed top-20 left-1/2 z-30 w-[95%] max-w-6xl -translate-x-1/2 rounded-full border border-white/10 bg-white/10 backdrop-blur-md">
+        <div className="flex items-center justify-between rounded-full px-6 py-3">
           {/* Logo */}
           <Link href="/" className="text-xl font-black">
             Navbar
             <span className="text-blue-500"> One</span>
           </Link>
 
-          {/* Menu Button */}
+          {/* Menu / Close Button */}
           <button
             onClick={() => setOpen(!open)}
             className="flex h-12 w-12 items-center justify-center rounded-full bg-black text-white transition hover:scale-105"
+            aria-label={open ? "Close menu" : "Open menu"}
           >
-            <div className="space-y-1.5">
-              <span
-                className={`block h-0.5 w-5 bg-white transition ${
-                  open ? "translate-y-2 rotate-45" : ""
-                }`}
-              />
-              <span
-                className={`block h-0.5 w-5 bg-white transition ${
-                  open ? "opacity-0" : ""
-                }`}
-              />
-              <span
-                className={`block h-0.5 w-5 bg-white transition ${
-                  open ? "-translate-y-2 -rotate-45" : ""
-                }`}
-              />
-            </div>
+            {open ? (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                className="h-5 w-5"
+              >
+                <path d="M18 6L6 18M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                className="h-5 w-5"
+              >
+                <path d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            )}
           </button>
         </div>
       </nav>
 
       {/* Fullscreen Menu */}
       <div
-        className={`fixed inset-0 z-40 flex items-center justify-center bg-black text-white transition-all duration-500 ${
+        className={`fixed inset-0 z-[60] flex items-center justify-center bg-black text-white transition-all duration-500 ${
           open ? "visible opacity-100" : "invisible opacity-0"
         }`}
       >
+        <button
+          onClick={() => setOpen(false)}
+          className="absolute top-8 right-8 flex h-12 w-12 items-center justify-center rounded-full bg-red-600 text-white transition hover:bg-red-500 hover:scale-105"
+          aria-label="Close menu"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={2.5}
+            className="h-6 w-6"
+          >
+            <path d="M18 6L6 18M6 6l12 12" />
+          </svg>
+        </button>
+
         <ul className="space-y-8 text-center">
           {navItems.map((item, index) => (
             <li key={item.name}>
