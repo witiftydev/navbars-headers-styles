@@ -16,7 +16,7 @@ export default function Navbar1() {
   return (
     <>
       {/* Floating Navbar */}
-      <nav className="fixed top-20 left-1/2 z-30 w-[95%] max-w-6xl -translate-x-1/2 rounded-full border border-white/10 bg-white/10 backdrop-blur-md">
+      <nav className="fixed top-50 left-1/2 z-30 w-[95%] max-w-6xl -translate-x-1/2 rounded-full border border-white/10 bg-white/10 backdrop-blur-md">
         <div className="flex items-center justify-between rounded-full px-6 py-3">
           {/* Logo */}
           <Link href="/" className="text-xl font-black">

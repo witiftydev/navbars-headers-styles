@@ -14,14 +14,14 @@ export default function Navbar2() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="w-full bg-zinc-900 text-white">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-zinc-900 text-white">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <Link href="/" className="text-2xl font-black tracking-tight">
           <span className="text-zinc-400">Navbar</span>
           <span className="text-emerald-400"> Two</span>
         </Link>
 
-        <ul className="hidden items-center gap-8 md:flex">
+        <ul className="hidden items-center gap-8 sm:flex">
           {navItems.map((item) => (
             <li key={item.name}>
               <Link
@@ -44,7 +44,7 @@ export default function Navbar2() {
 
         <button
           onClick={() => setOpen(!open)}
-          className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 md:hidden"
+          className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 sm:hidden"
           aria-label="Toggle menu"
         >
           <span
@@ -66,7 +66,7 @@ export default function Navbar2() {
       </div>
 
       <div
-        className={`overflow-hidden transition-all duration-300 md:hidden ${
+        className={`overflow-hidden transition-all duration-300 sm:hidden ${
           open ? "max-h-80" : "max-h-0"
         }`}
       >
