@@ -4,6 +4,7 @@ import Navbar3 from "@/components/Navbar3";
 import Navbar4 from "@/components/Navbar4";
 import Navbar5 from "@/components/Navbar5";
 import Navbar6 from "@/components/Navbar6";
+import Footer1 from "@/components/footer/Footer1";
 import React from "react";
 
 const page = () => {
@@ -15,6 +16,7 @@ const page = () => {
       <Navbar1 />
       <Navbar5 />
       <Navbar6 />
+      <Footer1 />
     </div>
   );
 };
